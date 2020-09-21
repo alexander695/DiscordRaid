@@ -2,7 +2,7 @@ import requests
 import discord
 import os
 
-yazi = """
+banner = """
  ██████╗ ██████╗  █████╗ ██╗   ██╗██╗████████╗██╗   ██╗    ███████╗███████╗ ██████╗██╗   ██╗██████╗ ██╗████████╗██╗   ██╗
 ██╔════╝ ██╔══██╗██╔══██╗██║   ██║██║╚══██╔══╝╚██╗ ██╔╝    ██╔════╝██╔════╝██╔════╝██║   ██║██╔══██╗██║╚══██╔══╝╚██╗ ██╔╝
 ██║  ███╗██████╔╝███████║██║   ██║██║   ██║    ╚████╔╝     ███████╗█████╗  ██║     ██║   ██║██████╔╝██║   ██║    ╚████╔╝ 
@@ -14,47 +14,47 @@ _____________________________________________________________________
 """
 
 os.system("cls")
-print(yazi)
+print(banner)
 print("[1] Clear")
-print("[2] Yardım")   
+print("[2] Help")   
 print("[3] Discord Webhook Deleter")
 print("[4] Discord Webhook Spammer")
-print("[5] Sunucuya Token Basma")
-print("[6] Discord Bot Aktif Etme")
+print("[5] Discord Token Server Joiner")
+print("[6] Discord Bot Activator")
 print("[7] Discord Token Checker")
-print("[8] Çıkış")
-surum = int(input("\nHangi Özelliği Kullanacağını Belirt: "))
+print("[8] Quit")
+surum = int(input("\nSelect Your Action: "))
 
 if surum == 1:
  	os.system("cls")
- 	print(yazi)
+ 	print(banner)
 
 elif surum == 2:
 	os.system("cls")
 	print("[1] Clear")
-	print("[2] Yardım")   
+	print("[2] Help")   
 	print("[3] Discord Webhook Deleter")
 	print("[4] Discord Webhook Spammer")
-	print("[5] Sunucuya Token Basma")
-	print("[6] Discord Bot Aktif Etme")
+	print("[5] Discord Token Server Joiner")
+	print("[6] Discord Bot Activator")
 	print("[7] Discord Token Checker")
-	print("[8] Çıkış")
+	print("[8] Quit")
 
 elif surum == 3:
     os.system("cls")
-    print(yazi)
-    vblink = input("Webhook Url Girin:")
+    print(banner)
+    vblink = input("Enter Webhook Url:")
     requests.delete(vblink)
-    print("Webhook Başarıyla silindi.")
+    print("Webhook Deleted Successfully.")
 
 elif surum == 4:
 	os.system("cls")
-	print(yazi)
+	print(banner)
 	kacdefagonderildi = 0
-	url = input("Webhook URL Girin: ")
-	isim = input("Webhook Ismi Girin: ")
-	avatarurl = input("Webhook Avatar URL Girin: ")
-	mesaj = input("Mesajınızı Girin: ")
+	url = input("Enter Webhook URL: ")
+	isim = input("Enter Webhook Name: ")
+	avatarurl = input("Enter Webhook Avatar Url: ")
+	mesaj = input("Enter Message: ")
 	while True:
 		bilgiler = {
     		"username": isim,
@@ -63,12 +63,12 @@ elif surum == 4:
 		}
 		requests.post(url, data=bilgiler)
 		kacdefagonderildi = kacdefagonderildi + 1
-		print(str(kacdefagonderildi) + " Mesaj Gönderildi")
+		print(str(kacdefagonderildi) + " Messages Send!")
 
 elif surum == 5:
 	os.system("cls")
-	print(yazi)
-	link = input('Discord Davet Linki: ')
+	print(banner)
+	link = input('Discord Invite Link: ')
 	apilink	= "https://discordapp.com/api/v6/invite/" + str(link)
 	print(link)
 	with open('tokens.txt','r') as handle:
@@ -79,19 +79,19 @@ elif surum == 5:
     			'Authorization': token
     		}
 			requests.post(apilink, headers=headers)
-			print("Tüm Çalışan Tokenler Sunucuya Giriş Yaptı.")
+			print("Token Joined Server.")
 
 elif surum == 6:
     os.system("cls")
-    print(yazi)
-    bottoken = input('Bot Tokeninizi Girin: ')
+    print(banner)
+    bottoken = input('Enter Your Bot Token: ')
     client = discord.Client()
     client.run(bottoken)
-    print("Bot Başarıyla Aktif Edildi.")
+    print("Discord Bot Activated Successfully.")
 
 elif surum == 7:
     os.system("cls")
-    print(yazi)
+    print(banner)
     with open("tokens.txt") as f:
         for line in f:
             tokenn = line.strip("\n")
@@ -99,9 +99,9 @@ elif surum == 7:
             url = "https://discordapp.com/api/v6/users/@me/library"
             r = requests.get(url, headers=headerss)
             if r.status_code == 200:
-                print("{} Token Çalışıyor.".format(line.strip("\n")))
+                print("{} Token Work.".format(line.strip("\n")))
             else:
-                print("Token Çalışmıyor.")
+                print("Token Dont Work.")
 
 elif surum == 8:
     quit()
