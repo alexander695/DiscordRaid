@@ -24,9 +24,7 @@ print("[6] Discord Bot Activator")
 print("[7] Discord Token Checker")
 print("[8] Quit")
 surum = int(input("\nSelect Your Action: "))
-else:
-	print:("invalid opcion")
-		
+
 if surum == 1:
  	os.system("clear")
  	print(banner)
