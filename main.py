@@ -13,7 +13,7 @@ banner = """
 _____________________________________________________________________
 """
 
-os.system("cls")
+os.system("clear")
 print(banner)
 print("[1] Clear")
 print("[2] Help")   
@@ -24,13 +24,15 @@ print("[6] Discord Bot Activator")
 print("[7] Discord Token Checker")
 print("[8] Quit")
 surum = int(input("\nSelect Your Action: "))
-
+else:
+	print:("invalid opcion")
+		
 if surum == 1:
- 	os.system("cls")
+ 	os.system("clear")
  	print(banner)
 
 elif surum == 2:
-	os.system("cls")
+	os.system("clear")
 	print("[1] Clear")
 	print("[2] Help")   
 	print("[3] Discord Webhook Deleter")
@@ -41,14 +43,14 @@ elif surum == 2:
 	print("[8] Quit")
 
 elif surum == 3:
-    os.system("cls")
+    os.system("clear")
     print(banner)
     vblink = input("Enter Webhook Url:")
     requests.delete(vblink)
     print("Webhook Deleted Successfully.")
 
 elif surum == 4:
-	os.system("cls")
+	os.system("clear")
 	print(banner)
 	kacdefagonderildi = 0
 	url = input("Enter Webhook URL: ")
@@ -66,7 +68,7 @@ elif surum == 4:
 		print(str(kacdefagonderildi) + " Messages Send!")
 
 elif surum == 5:
-	os.system("cls")
+	os.system("clear")
 	print(banner)
 	link = input('Discord Invite Link: ')
 	apilink	= "https://discordapp.com/api/v6/invite/" + str(link)
@@ -82,7 +84,7 @@ elif surum == 5:
 			print("Token Joined Server.")
 
 elif surum == 6:
-    os.system("cls")
+    os.system("clear")
     print(banner)
     bottoken = input('Enter Your Bot Token: ')
     client = discord.Client()
@@ -90,7 +92,7 @@ elif surum == 6:
     print("Discord Bot Activated Successfully.")
 
 elif surum == 7:
-    os.system("cls")
+    os.system("clear")
     print(banner)
     with open("tokens.txt") as f:
         for line in f:
